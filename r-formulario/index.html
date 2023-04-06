@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Formularios</title>
+</head>
+<body style="display: flexbox; flex-direction: column;">
+    <label for="nome">
+        Informe seu nome 
+    </label>
+    <input id="nome" name="nome" type="text" />
+    <button form="aux">enviar</button>
+    <form id="aux">
+
+    </form>
+
+    <datalist id="time" >
+        <option>Curintias</option>
+        <option>Palmeiras</option>
+        <option>Bambinos</option>
+        <option>Vila</option>
+    </datalist>
+
+    <input list="time" />
+    <!-- Para usar o imput type file a estutura form deve conter enctype="multipart/form-data" -->
+    <form action="" name="mail" style="display: flexbox; flex-direction: column;" enctype="multipart/form-data">
+        <input type="email" required  placeholder="tamarasu@1235.com" />
+        <input type="file"  multiple/>
+        <button>Enviar</button>
+    </form>
+
+    <label for="cores">
+        Selecione o modelo 
+    </label>
+    <select id="cores">
+            <option value="">Selecione uma cor</option>
+            <option value="azul">azul</option>
+            <option value="vermelho">vermelho</option>
+            <option value="amarelo">Amarelo</option>
+
+    </select>
+    <!------------------> 
+    
+    <br/>
+
+    <label> Excercicio do formulario </label>
+    <fieldset name="" >
+        <legend>Contato</legend>
+        <form action="">
+            <label for="namef" id="nome">Nome</label>
+            <br/>
+            <input id="namef" name="namef" type="text" /> 
+            <br/>
+            <label for="mail"  id="email">Email</label>
+            <br/>
+            <input type="email" name="mail" id="mail"/>
+            <br/>
+            <label for="texta">Mensagem</label>
+            <br/>
+            <textarea rows="5" cols="18" id="texta">
+
+            </textarea>
+        </form>
+    </fieldset>
+ 
+
+</body>
+</html>
