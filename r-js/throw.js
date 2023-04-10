@@ -1,5 +1,5 @@
 /*Throw (lançar) siginifica que ele vai lança uma mensagem ou variavel e o catch vai pega, serve para tratar erros  */
-
+/*
 function whatDay(dia = '') {
     if (dia === '') {
         throw 'Dia não foi informado'
@@ -96,4 +96,122 @@ console.log(calcular(familia))
 
 // transformando  Celsiu em Finrech 
 
+ function covesorDeMedida(string){
+    let celsiu = string.toUpperCase().includes("C");
+    let farent = string.toUpperCase().includes("F");
+    let result;
+    if(!celsiu && !farent){
+        throw  new Error("Grau não reconhecido.");
+    }
+  //Criando uma formula de extrair o o numero 
+  
+    let extracao = Number(string.toUpperCase().replace("F", " "))
+    let formula = (fare) =>(fare - 32) * 5/9 
+    if(celsiu){
+         extracao = Number(string.toUpperCase().replace("C", " "))
+         
+         formula = (ce) => ce * 9/5 + 32
+         return formula(extracao.toFixed(2)  ) + "F"
+    }
+    return formula(extracao).toFixed(2)  + 'C'
+ }
+try {
+    console.log(covesorDeMedida("70C"))
+}catch(err){
+console.log(err.message)
 
+} */
+// trabalhando arrays 
+
+const booksByCategory = [
+    {
+        category: "Riqueza",
+        books: [
+            {
+                title: "Os segredos da mente milionária",
+                author: "T. Harv Eker",
+            },
+            {
+                title: "O homem mais rico da Babilônia",
+                author: "George S. Clason",
+            },
+            {
+                title: "Pai rico, pai pobre",
+                author: "Robert T. Kiyosaki e Sharon L. Lechter",
+            },
+        ],
+    },
+    {
+        category: "Inteligência Emocional",
+        books: [
+            {
+                title: "Você é Insubstituível",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Ansiedade – Como enfrentar o mal do século",
+                author: "Augusto Cury",
+            },
+            {
+                title: "Os 7 hábitos das pessoas altamente eficazes",
+                author: "Stephen R. Covey",
+            },
+        ],
+    },
+];
+
+ let  numberOfCategories = booksByCategory.length ;
+ let  numberOfBooks = 0 ;
+
+
+
+ for(let livros of booksByCategory){
+   // console.log(livros.books.length)
+ };
+
+let contado= 0;
+function pegaNome(){
+
+    let autor = []
+    for(let category of booksByCategory){ 
+    for(let livros of category.books){
+        if(autor.indexOf(livros.author) == -1){
+           autor.push(livros.author)
+        }
+    }
+   
+}  
+return autor
+
+}
+
+function pegaNomeAgust(){
+    let livrosA = []
+    for(let category of booksByCategory){ 
+    for(let livros of category.books){
+        if(livros.author == 'Augusto Cury'){
+           livrosA.push(livros.title)
+        }
+    }
+   
+    }  
+    return `Livros escritos  por Agusto Cury são  ${livrosA} `
+}
+
+function pegaNomeAutor(autor){
+    let livrosA = []
+    for(let category of booksByCategory){ 
+    for(let livros of category.books){
+        if(livros.author == autor){
+           livrosA.push(livros.title)
+        }
+    }
+   
+    }  
+    return `Livros escritos  pleo ${autor}  são  ${livrosA} `
+}
+let aux = 'Stephen R. Covey'
+
+console.log(pegaNomeAutor(aux))  
+
+ //console.log(numberOfBooks)
